@@ -4,6 +4,7 @@ import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebEleme
 import com.qaprosoft.carina.core.gui.AbstractUIObject;
 import com.qaprosoft.carina.demo.gui.pages.HomePage;
 import com.qaprosoft.carina.demo.gui.pages.SignUpPage;
+import com.qaprosoft.carina.demo.gui.pages.TipUsPage;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -15,6 +16,9 @@ public class Navbar extends AbstractUIObject {
 
     @FindBy(xpath = "//a[@class='signup-icon no-margin-right']")
     private ExtendedWebElement registerButton;
+
+    @FindBy(xpath = "//div[@id='social-connect']/a[1]")
+    private ExtendedWebElement tipUsButton;
 
     public Navbar(WebDriver driver) {
         super(driver);
@@ -32,6 +36,10 @@ public class Navbar extends AbstractUIObject {
         return  registerButton.isElementPresent();
     }
 
+    public boolean isTipUsButtonPresent(){
+        return  tipUsButton.isElementPresent();
+    }
+
     public LoginComponent clickLoginButton(){
         loginButton.click();
         return new LoginComponent(driver);
@@ -40,6 +48,11 @@ public class Navbar extends AbstractUIObject {
     public SignUpPage clickRegisterButton() {
         registerButton.click();
         return new SignUpPage(driver);
+    }
+
+    public TipUsPage clickTipUsButton() {
+        tipUsButton.click();
+        return new TipUsPage(driver);
     }
 
 }
