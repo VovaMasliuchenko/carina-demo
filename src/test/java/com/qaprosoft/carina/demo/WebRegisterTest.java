@@ -27,7 +27,7 @@ public class WebRegisterTest implements IAbstractTest {
         Assert.assertTrue(signUpPage.isCheckBoxAgreeRulePresent(), "Checkbox rule button is not present!");
         Assert.assertTrue(signUpPage.isCheckBoxAgreeOldPresent(), "Checkbox old button is not present!");
 
-        signUpPage.registerNewAccount("pfkssdf", "tanegim389@qqhow.com","Vm1243_");
-        pause(1);
+        signUpPage.registerNewAccount("vova14", "dijoh37523@hekarro.com","Vm1243_");
+        Assert.assertTrue(signUpPage.isRegisterSuccessPresent(), "Account was not registered!");
     }
 }

@@ -60,6 +60,7 @@ public class TipUsPage extends AbstractUIObject {
     }
 
     public TipUsPage clickSubmitButton() {
+        pause(1);
         submitButton.click();
         return this;
     }

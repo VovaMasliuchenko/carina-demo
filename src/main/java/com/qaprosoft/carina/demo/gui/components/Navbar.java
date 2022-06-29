@@ -40,17 +40,20 @@ public class Navbar extends AbstractUIObject {
         return  tipUsButton.isElementPresent();
     }
 
-    public LoginComponent clickLoginButton(){
+    public LoginComponent clickLoginButton() {
+        pause(1);
         loginButton.click();
         return new LoginComponent(driver);
     }
 
     public SignUpPage clickRegisterButton() {
+        pause(1);
         registerButton.click();
         return new SignUpPage(driver);
     }
 
     public TipUsPage clickTipUsButton() {
+        pause(1);
         tipUsButton.click();
         return new TipUsPage(driver);
     }

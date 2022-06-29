@@ -27,6 +27,9 @@ public class SignUpPage extends AbstractUIObject {
     @FindBy(xpath = "//form[@id='frmOpin']//label[@for='iagree2']")
     private ExtendedWebElement checkBoxAgreeOld;
 
+    @FindBy(xpath = "//div[@class='normal-text res-success']/h3")
+    private ExtendedWebElement registerSuccess;
+
     public SignUpPage(WebDriver driver) {
         super(driver);
         setPageURL("/register.php3");
@@ -52,6 +55,8 @@ public class SignUpPage extends AbstractUIObject {
         return submitButton.isElementPresent();
     }
 
+    public boolean isRegisterSuccessPresent() {return registerSuccess.isElementPresent();}
+
     public boolean isCheckBoxAgreeRulePresent() {
         return checkBoxAgreeRule.isElementPresent();
     }
@@ -75,6 +80,7 @@ public class SignUpPage extends AbstractUIObject {
     }
 
     public SignUpPage clickSubmitButton() {
+        pause(2);
         submitButton.click();
         return this;
     }
