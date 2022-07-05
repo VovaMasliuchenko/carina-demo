@@ -2,7 +2,6 @@ package com.qaprosoft.carina.demo.gui.pages;
 
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.gui.AbstractUIObject;
-import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -28,7 +27,7 @@ public class SignUpPage extends AbstractUIObject {
     private ExtendedWebElement checkBoxAgreeOld;
 
     @FindBy(xpath = "//div[@class='normal-text res-success']/h3")
-    private ExtendedWebElement registerSuccess;
+    private ExtendedWebElement registerSuccessTitle;
 
     public SignUpPage(WebDriver driver) {
         super(driver);
@@ -55,7 +54,7 @@ public class SignUpPage extends AbstractUIObject {
         return submitButton.isElementPresent();
     }
 
-    public boolean isRegisterSuccessPresent() {return registerSuccess.isElementPresent();}
+    public boolean isRegisterSuccessPresent() {return registerSuccessTitle.isElementPresent();}
 
     public boolean isCheckBoxAgreeRulePresent() {
         return checkBoxAgreeRule.isElementPresent();
